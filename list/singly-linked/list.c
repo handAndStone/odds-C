@@ -54,7 +54,7 @@ void vi(ElemType e)
 
 
 /*
-*构建一个空的线性表L,返回头结点的位置。
+*构建一个空的线性表,返回头结点的位置。
 */
 LNode *InitList()
 {
@@ -73,8 +73,9 @@ LNode *InitList()
 }
 
 /*
-*初始条件：线性表L已经存在。
-*操作结果：销毁线性表L。
+*初始条件：线性表已经存在。
+*操作结果：销毁线性表。
+*参数：线性链表的头结点
 */
 Status DestroyList(LNode *head)
 {
@@ -88,8 +89,9 @@ Status DestroyList(LNode *head)
 	return true;
 }
 /*
-*初始条件：线性表L已经存在。
+*初始条件：线性表已经存在。
 *操作结果：清空表，表头还在。
+*参数：线性链表的头结点。
 */
 Status ClearList(LNode *head)
 {
@@ -108,6 +110,7 @@ Status ClearList(LNode *head)
 /*
 *初始条件：线性表L已经存在。
 *操作结果：若L为空表，返回true，否则返回false。
+*参数：线性链表的头结点。
 */
 Status ListEmpty(LNode *head)
 {
@@ -123,6 +126,7 @@ Status ListEmpty(LNode *head)
 /*
 *初始条件：线性表L已经存在
 *操作结果：返回表中元素个数
+*参数：head线性链表的头结点
 */
 unsigned int ListLength(LNode *head)
 {
@@ -139,6 +143,7 @@ unsigned int ListLength(LNode *head)
 /*
 *L为带头结点的但练表的头指针，当第i个元素存在时，
 *将其赋值给(*e),并返回true,否则返回false.
+*参数：head线性链表的头结点，i结点位置（不算头结点），e返回结果。
 */
 Status GetElem(LNode *head, int i, ElemType *e)
 {
@@ -187,8 +192,7 @@ unsigned int LocateElem(LNode *head, ElemType e, Status(*CompareElem)(ElemType,E
 }
 /*
 *初始条件：线性表存在
-*操作结果：若cur_e是线性表中的元素，且不是第一个，则用(*pre_e)返回它的前驱，
-*          返回true;否则操作失败，(*pre_e)无定义，返回false。
+*操作结果：若cur_e是线性表中的元素，且不是第一个，则用(*pre_e)返回它的前驱，返回true;否则操作失败，(*pre_e)无定义，返回false。
 */
 Status PriorElem(LNode *head,ElemType cur_e, ElemType *pre_e)
 {
@@ -213,8 +217,7 @@ Status PriorElem(LNode *head,ElemType cur_e, ElemType *pre_e)
 
 /*
 *初始条件：线性表L已经存在
-*操作结果：若cur_e是L的数据元素，且不是最后一个，则用(*next_e)返回它的后继，
-*          返回true；否则操作失败，(*next_e)无定义，返回false。
+*操作结果：若cur_e是L的数据元素，且不是最后一个，则用(*next_e)返回它的后继，返回true；否则操作失败，(*next_e)无定义，返回false。
 */
 Status NextElem(LNode *head, ElemType cur_e, ElemType *next_e)
 {
