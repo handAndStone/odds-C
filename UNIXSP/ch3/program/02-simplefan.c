@@ -4,6 +4,7 @@
 
 int main(int argc,char *argv[])
 {
+	printf("-------------start---------------\n");
 	pid_t childpid=0;
 	int i,n;
 	 
@@ -23,6 +24,7 @@ int main(int argc,char *argv[])
 	}
 	sleep(1);
 	fprintf(stderr,"i:%d  process ID:%u  parent ID:%u  child ID:%u\n",i,getpid(),getppid(),childpid);
+	printf("-------------end---------------\n");
 	return 0;
 }
 

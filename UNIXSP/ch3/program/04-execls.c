@@ -5,6 +5,7 @@
 
 int main()
 {
+	printf("-----------start-------------\n");
 	pid_t childpid;
 	childpid=fork();
 	if(childpid == -1)
@@ -14,7 +15,7 @@ int main()
 	}
 	if(childpid == 0)
 	{
-		execl("/bin/ls","ls","-1",NULL);
+		execl("/bin/ls","ls","-l",NULL);
 		perror("Child failed to exec ls");
 		return 1;
 	}
@@ -23,5 +24,6 @@ int main()
 		perror("Parent failed to wait due to signal or error");
 		return 1;
 	}
+	printf("------------end--------------\n");
 	return 0;
 }

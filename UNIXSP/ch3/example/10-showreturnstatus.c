@@ -15,7 +15,7 @@ void showreturnstatus(void)
 	{
 		perror("Failed to wait for child");
 	}
-	else if(WIFEXITED(status)  && !WEXITSTATUS(status))
+	else if(WIFEXITED(status)  && !WEXITSTATUS(status))  //WEXITSTATUS(status) get the return value of the child process.
 	{
 		printf("Child %u terminated normally\n",childpid);
 	}
@@ -33,12 +33,11 @@ void showreturnstatus(void)
 	}
 }
 
-void main()
+int main()
 {
 	printf("--------------start----------\n");
 	fork();
-	fork();
-	fork();
 	showreturnstatus();
 	printf("--------------end------------\n");
+	return 0;
 }
