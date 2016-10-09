@@ -1,0 +1,6 @@
+setTimer:setTimer.o
+	cc -o setTimer setTimer.o
+setTimer.o:setTimer.c
+	cc -c setTimer.c
+clean:
+	rm setTimer.o

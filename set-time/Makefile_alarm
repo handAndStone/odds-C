@@ -1,0 +1,6 @@
+alarm:alarm.o
+	g++ -o alarm alarm.o
+alarm.o:alarm.c
+	g++ -c alarm.c
+clean:
+	rm alarm.o
